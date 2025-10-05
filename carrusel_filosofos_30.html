@@ -1,0 +1,592 @@
+<html lang="es"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Carrusel Interactivo — 30 Filósofos (Completo)</title>
+  <style>
+    :root{--bg:#0f1724;--card:#071029;--muted:#94a3b8;--gold:#d97706;--purple:#7c3aed;--blue:#0ea5e9;--green:#10b981}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; background:linear-gradient(180deg,var(--bg),#071021);color:#e6eef7}
+    header{padding:20px;text-align:center;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:6px 0 0;font-size:13px;color:var(--muted)}
+    .controls{display:flex;justify-content:center;gap:10px;padding:18px}
+    .controls button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer}
+    .controls button.primary{background:#111827;color:#e6eef7;border:1px solid rgba(255,255,255,0.06)}
+    .wrap{padding:18px 24px}
+    .carousel{display:flex;gap:20px;overflow-x:auto;padding:20px 10px;scroll-behavior:smooth}
+    .carousel::-webkit-scrollbar{height:10px}
+    .carousel::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.06);border-radius:8px}
+    .card{flex:0 0 420px;background:var(--card);border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(2,6,23,0.7);transition:transform .22s;display:flex;flex-direction:column;max-height:520px}
+    .card:hover{transform:translateY(-6px)}
+    .era{font-weight:700;font-size:12px;padding:6px 10px;border-radius:999px;display:inline-block;color:#071021}
+    .meta{color:var(--muted);margin:8px 0 12px;font-size:14px}
+    .section{margin-bottom:10px}
+    .section b{color:#cfeffd}
+    .content{overflow:auto;padding-right:6px}
+    .name{font-size:16px;font-weight:800;margin-bottom:6px}
+    footer{padding:14px 24px;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:920px){.card{flex:0 0 340px}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Carrusel Interactivo — 30 Filósofos</h1>
+    <p class="lead">Didáctico, atractivo y con información completa. Desplaza horizontalmente o usa las flechas.</p>
+  </header>
+
+  <div class="controls">
+    <button onclick="scrollCarousel(-1)">⬅️ Anterior</button>
+    <button class="primary" onclick="scrollCarousel(1)">Siguiente ➡️</button>
+    <button onclick="downloadHTML()">💾 Descargar HTML</button>
+  </div>
+
+  <div class="wrap">
+    <div class="carousel" id="carousel">
+      <!-- Cards se inyectan por JS -->
+    <article class="card"><div class="name">Tales de Mileto <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">624 a.C. — 548 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Considerado tradicionalmente el primer filósofo griego. Tales buscó explicaciones racionales para los fenómenos naturales y planteó que el principio (arjé) de todas las cosas era el agua. Sus observaciones y razonamientos sobre geometría y astronomía sentaron las bases para una aproximación científica y racional al mundo, separada de los mitos.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Tales, el ser humano forma parte de un cosmos ordenado por principios naturales. La capacidad de razonar y observar permite comprender el entorno; así, la humanidad puede acceder al conocimiento mediante la investigación y la medida.</div></div>
+        </div></article><article class="card"><div class="name">Pitágoras <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">569 a.C. — 475 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador de la escuela pitagórica, donde las matemáticas, la música y la cosmología estaban íntimamente relacionadas. Pitágoras y sus seguidores sostuvieron que los números son la clave para entender la estructura del universo; desarrollaron teoremas matemáticos y una visión ética que valoraba la armonía y la purificación del alma.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Pitágoras defendió una concepción en la que el alma tiene importancia central: el ser humano posee una dimensión espiritual que puede purificarse y acercarse a la armonía universal a través del conocimiento y la disciplina.</div></div>
+        </div></article><article class="card"><div class="name">Heráclito <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">535 a.C. — 475 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo del cambio: su lema "panta rhei" (todo fluye) resume su idea de que la realidad está en constante transformación. Identificó el fuego como un principio dinámico y subrayó la importancia de las tensiones entre opuestos para la vida y el conocimiento. Su pensamiento prefigura intuiciones dialécticas posteriores.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Desde la perspectiva de Heráclito, el ser humano es un proceso: identidad y estabilidad se entienden como efectos temporales dentro de un flujo constante. Conocer es captar las leyes del cambio y adaptarse a la tensión de contrarios.</div></div>
+        </div></article><article class="card"><div class="name">Parménides <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">515 a.C. — 450 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Autor de una de las críticas más famosas al cambio aparente: sostuvo que el ser es uno, inmutable y eterno, y que las apariencias cambiantes del mundo sensible son engañosas. Introdujo la primacía del pensamiento racional (logos) frente a la sensación.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Parménides, la razón humana debe guiar la búsqueda de la verdad: el hombre alcanza conocimiento verdadero cuando confía en el pensamiento lógico que revela la unidad y estabilidad del ser, por encima de las percepciones engañosas.</div></div>
+        </div></article><article class="card"><div class="name">Anaxágoras <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">500 a.C. — 428 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Introdujo la noción de Nous (mente o inteligencia) como principio ordenante del cosmos. Anaxágoras explicó la diversidad del mundo mediante semillas o principios que contienen las cualidades de las cosas; su enfoque abrió la puerta a explicaciones naturales del orden cósmico.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">En su visión, el ser humano participa de la disposición racional del mundo: la mente (nous) es fundamental tanto para la estructura del universo como para la capacidad humana de comprender y ordenar la experiencia.</div></div>
+        </div></article><article class="card"><div class="name">Demócrito <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">460 a.C. — 370 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Junto a Leucipo, desarrolló el atomismo: todo está compuesto por átomos y vacío. Esta teoría fue una tentativa temprana de explicar la diversidad natural mediante componentes mínimos y leyes mecánicas; influyó en la física y la filosofía materialista posteriores.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Demócrito entendía al ser humano como un conjunto de elementos materiales: la mente y las sensaciones se derivan del movimiento y la disposición de los átomos. Su enfoque enfatiza explicaciones naturales y físicas de la vida mental.</div></div>
+        </div></article><article class="card"><div class="name">Protágoras <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">485 a.C. — 415 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Uno de los sofistas más influyentes; famoso por la máxima "el hombre es la medida de todas las cosas". Protágoras destacó la importancia de la retórica, la educación y la variabilidad cultural en la formación de juicios y verdades prácticas en la vida política y pública.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Protágoras, el conocimiento está mediado por la percepción humana y las convenciones sociales: la verdad puede variar según el punto de vista y el contexto cultural, lo que sitúa al ser humano en el centro de la valoración.</div></div>
+        </div></article><article class="card"><div class="name">Sócrates <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">470 a.C. — 399 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura clave de la filosofía ética; no dejó escritos, pero su método (la mayéutica o diálogo crítico) y su énfasis en la virtud influyeron profundamente. Sócrates buscaba definiciones claras de valores como la justicia y la piedad y proponía la autoexaminación como vía para vivir bien.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano es, ante todo, un agente moral y racional. Sócrates defendía que la vida examinada, guiada por la razón y por la búsqueda de la virtud, es la única vida que merece la pena ser vivida.</div></div>
+        </div></article><article class="card"><div class="name">Platón <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">427 a.C. — 347 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Discípulo de Sócrates y fundador de la Academia. Platón desarrolló la teoría de las Ideas o Formas: realidades perfectas y eternas de las que los objetos sensibles son copias. Escribió sobre política, ética, epistemología y estética (Diálogos como 'La República', 'Fedón').</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Platón concibe al ser humano como un compuesto de alma y cuerpo, donde el alma participa de las Ideas y aspira a recuperar su conocimiento original: la educación y la filosofía son medios para elevar el alma hacia la verdad y el bien.</div></div>
+        </div></article><article class="card"><div class="name">Aristóteles <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">384 a.C. — 322 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Alumno de Platón que sistematizó la lógica, la metafísica, la ética, la política y las ciencias naturales. Introdujo nociones esenciales como las cuatro causas, la sustancia y el fin (telos). Su ética de la virtud entendía la felicidad (eudaimonía) como actividad conforme a la excelencia racional.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Aristóteles define al ser humano como 'animal racional' (zoon logon echon): un ser cuya naturaleza incluye la capacidad de razón práctica y teórica. La realización humana pasa por cultivar virtudes que permiten alcanzar su fin último.</div></div>
+        </div></article><article class="card"><div class="name">Epicuro <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">341 a.C. — 270 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador del epicureísmo; sostuvo que el fin de la vida es la búsqueda de un placer entendido como ausencia de dolor (ataraxia): vida sencilla, amistad, reflexión y ausencia de superstición. Mantuvo un atomismo ético y naturalista.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Epicuro el ser humano es un ser sensible cuyo bienestar depende de gestionar deseos, cultivar amistades y evitar miedos irracionales, especialmente al cosmos y a la muerte.</div></div>
+        </div></article><article class="card"><div class="name">Zenón de Citio <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">334 a.C. — 262 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador del estoicismo, una escuela que enseñó la tranquilidad mediante la conformidad con la razón y la naturaleza. Los estoicos desarrollaron una ética de la virtud, autocontrol y resistencia ante la adversidad.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano forma parte de un orden racional (logos). La felicidad depende de vivir de acuerdo con la razón y la virtud, no de bienes externos: la autonomía moral es central.</div></div>
+        </div></article><article class="card"><div class="name">Pirró de Elida <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">360 a.C. — 270 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Líder del escepticismo antiguo: la suspensión del juicio (epoché) frente a afirmaciones dogmáticas conduce, según él, a la tranquilidad (ataraxia). Su postura desafía las certezas absolutas.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El humano está limitado en su capacidad de conocer con certeza; aceptar la incertidumbre y suspender juicios puede conducir al equilibrio emocional y a una vida más serena.</div></div>
+        </div></article><article class="card"><div class="name">Diógenes de Sinope <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">412 a.C. — 323 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Principal exponente del cinismo. Diógenes promovió una vida austera y coherente con la naturaleza, criticó convenciones sociales y buscó la autarquía (autosuficiencia). Sus acciones performativas eran forma de enseñanza.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Concepción aplicada: el ser humano debe liberarse de dependencias superfluas y vivir de manera honesta y auto-suficiente para alcanzar la libertad auténtica.</div></div>
+        </div></article><article class="card"><div class="name">San Agustín de Hipona <span class="era" style="background:var(--purple);color:#fff">Medieval</span></div>
+        <div class="meta">354 — 430</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Autor central de la patrística cristiana. Integró elementos platónicos con la doctrina cristiana para explicar el pecado original, la gracia y la ciudad de Dios. Sus confesiones combinan reflexión filosófica y autobiográfica.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano es criatura de Dios con voluntad y razón, pero marcado por el pecado; la redención y la verdadera orientación moral requieren la gracia divina y una vida de fe reflexiva.</div></div>
+        </div></article><article class="card"><div class="name">Santo Tomás de Aquino <span class="era" style="background:var(--purple);color:#fff">Medieval</span></div>
+        <div class="meta">1225 — 1274</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura clave de la escolástica: sintetizó la filosofía aristotélica con la teología cristiana. Desarrolló pruebas racionales de la existencia de Dios y una ética natural orientada al bien supremo.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Tomás, el ser humano es un ser racional hecho por Dios: posee alma inmortal y puede conocer verdades naturales y sobrenaturales. La razón y la fe se complementan en la búsqueda del fin último.</div></div>
+        </div></article><article class="card"><div class="name">Nicolás Maquiavelo <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1469 — 1527</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Considerado padre de la ciencia política moderna. En 'El Príncipe' analiza la adquisición y conservación del poder con realismo, separando la política de la moral normativa tradicional.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Visión pragmática del ser humano: agentes motivados por intereses, pasiones y cálculo; la política efectiva requiere entender estas dinámicas y diseñar instituciones que garanticen estabilidad.</div></div>
+        </div></article><article class="card"><div class="name">Giordano Bruno <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1548 — 1600</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Pensador que postuló un universo infinito y defendió la autonomía intelectual frente a la ortodoxia. Sus ideas sobre la infinitud cósmica y la libertad intelectual le costaron la persecución.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Bruno promovía una visión amplia del ser humano como partícipe en un cosmos sin límites, con capacidad para explorar y cuestionar las verdades establecidas.</div></div>
+        </div></article><article class="card"><div class="name">René Descartes <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1596 — 1650</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador del racionalismo moderno y del método científico basado en la duda metódica. Formuló el cogito ('pienso, luego existo') y propuso un dualismo entre res cogitans (mente) y res extensa (cuerpo).</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano es, primordialmente, una mente pensante que puede alcanzar certezas indudables mediante la razón. El dualismo cartesiano separa una esfera mental autónoma del mundo físico.</div></div>
+        </div></article><article class="card"><div class="name">Thomas Hobbes <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1588 — 1679</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo político que en 'Leviatán' describió el estado natural como conflicto de todos contra todos y propuso el contrato social para instaurar un poder central fuerte que garantice seguridad.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Hobbes ve al ser humano como impulsado por deseos y temores: en ausencia de autoridad, prima la competencia. La racionalidad conduce a la creación de instituciones que aseguren la supervivencia y la paz.</div></div>
+        </div></article><article class="card"><div class="name">John Locke <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1632 — 1704</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Padre del empirismo moderno y de teorías políticas liberales. Defendió la tabula rasa (la mente no tiene ideas innatas), los derechos naturales y el gobierno como protector de la vida, la libertad y la propiedad.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano adquiere conocimiento por la experiencia; posee derechos naturales y dignidad que justifican límites al poder político y la protección de la libertad individual.</div></div>
+        </div></article><article class="card"><div class="name">George Berkeley <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1685 — 1753</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo del idealismo inmaterialista que afirmó que la existencia de los objetos depende de ser percibidos ('esse est percipi'), rechazando el materialismo mecanicista.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Berkeley sitúa al ser humano en el centro de la realidad perceptual: la mente y la percepción hacen que el mundo exista para nosotros; la continuidad de la realidad se explica por la percepción divina cuando no hay humanos presentes.</div></div>
+        </div></article><article class="card"><div class="name">Montesquieu <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1689 — 1755</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Importante teórico político de la Ilustración; su estudio de los sistemas políticos y su propuesta de separación de poderes influyeron en constituciones modernas. Analizó cómo leyes, clima y costumbres afectan las instituciones.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Considera al ser humano como moldeado por instituciones y contextos; la organización política adecuada permite equilibrar libertades y seguridad, favoreciendo el desarrollo humano.</div></div>
+        </div></article><article class="card"><div class="name">Voltaire <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1694 — 1778</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura central de la Ilustración: crítico de la intolerancia y la superstición, defensor de la libertad de expresión, la razón y la tolerancia. Sus escritos combinaron erudición y sátira.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Voltaire creyó en las capacidades críticas del ser humano: la libertad y la educación permiten combatir la superstición y mejorar la sociedad.</div></div>
+        </div></article><article class="card"><div class="name">Jean-Jacques Rousseau <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1712 — 1778</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Autore de 'El contrato social' y 'Emilio'; analizó cómo las desigualdades sociales se originan y propuso una educación natural. Sostuvo que la sociedad puede corromper la bondad natural del individuo.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Rousseau defendió que el ser humano es bueno por naturaleza pero es deformado por instituciones injustas; la educación y las formas de convivencia pueden restaurar la autenticidad y la libertad genuina.</div></div>
+        </div></article><article class="card"><div class="name">David Hume <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1711 — 1776</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Empirista y escéptico: analizó la naturaleza de la causalidad, las creencias y la moralidad basada en sentimientos. Hume cuestionó la certeza de la inferencia inductiva y destacó el papel de las pasiones.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Hume, el ser humano es una mezcla de impresiones y sentimientos; la razón es limitada y las motivaciones morales están profundamente ligadas a las emociones y costumbres.</div></div>
+        </div></article><article class="card"><div class="name">Immanuel Kant <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1724 — 1804</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Revolucionó la filosofía con la 'Crítica de la razón pura', proponiendo que la mente estructura parte del conocimiento. En ética, desarrolló el imperativo categórico: la moralidad basada en principios universales y el respeto a la autonomía.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Kant ve al ser humano como sujeto autónomo y legislador moral: posee dignidad intrínseca por su capacidad de racionalidad práctica y debe ser tratado como fin en sí mismo.</div></div>
+        </div></article><article class="card"><div class="name">Karl Marx <span class="era" style="background:var(--green);color:#fff">Contemporánea</span></div>
+        <div class="meta">1818 — 1883</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo y economista fundador del materialismo histórico: analizó cómo las condiciones materiales y las relaciones de producción determinan estructuras sociales y conciencia. Criticó la explotación capitalista y propuso la transformación social mediante la acción colectiva.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Marx concibe al ser humano como un ser social y productivo: la naturaleza humana se realiza en el trabajo y en las relaciones sociales; las formas económicas modelan la identidad y la posibilidad de emancipación.</div></div>
+        </div></article><article class="card"><div class="name">Friedrich Nietzsche <span class="era" style="background:var(--green);color:#fff">Contemporánea</span></div>
+        <div class="meta">1844 — 1900</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Crítico de la moral tradicional, la religión y la cultura moderna; introdujo conceptos como la voluntad de poder, el eterno retorno y el Übermensch. Su estilo aforístico y genealógico analizó el origen de los valores.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Nietzsche propone un ser humano creativo, capaz de superar valores impuestos y crear nuevos significados; la vida debe afirmarse en una postura de crecimiento y auto-superación.</div></div>
+        </div></article><article class="card"><div class="name">Jean-Paul Sartre <span class="era" style="background:var(--green);color:#fff">Contemporánea</span></div>
+        <div class="meta">1905 — 1980</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura central del existencialismo del siglo XX: enfatizó la libertad radical, la responsabilidad individual y la necesidad de dar sentido a la propia vida. Su obra filosófica y literaria exploró la condición humana en situaciones concretas.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Sartre sostiene que "la existencia precede a la esencia": el ser humano no tiene una naturaleza dada, sino que se constituye por sus acciones; la libertad implica responsabilidad y la posibilidad de autenticidad.</div></div>
+        </div></article><article class="card"><div class="name">Tales de Mileto <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">624 a.C. — 548 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Considerado tradicionalmente el primer filósofo griego. Tales buscó explicaciones racionales para los fenómenos naturales y planteó que el principio (arjé) de todas las cosas era el agua. Sus observaciones y razonamientos sobre geometría y astronomía sentaron las bases para una aproximación científica y racional al mundo, separada de los mitos.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Tales, el ser humano forma parte de un cosmos ordenado por principios naturales. La capacidad de razonar y observar permite comprender el entorno; así, la humanidad puede acceder al conocimiento mediante la investigación y la medida.</div></div>
+        </div></article><article class="card"><div class="name">Pitágoras <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">569 a.C. — 475 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador de la escuela pitagórica, donde las matemáticas, la música y la cosmología estaban íntimamente relacionadas. Pitágoras y sus seguidores sostuvieron que los números son la clave para entender la estructura del universo; desarrollaron teoremas matemáticos y una visión ética que valoraba la armonía y la purificación del alma.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Pitágoras defendió una concepción en la que el alma tiene importancia central: el ser humano posee una dimensión espiritual que puede purificarse y acercarse a la armonía universal a través del conocimiento y la disciplina.</div></div>
+        </div></article><article class="card"><div class="name">Heráclito <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">535 a.C. — 475 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo del cambio: su lema "panta rhei" (todo fluye) resume su idea de que la realidad está en constante transformación. Identificó el fuego como un principio dinámico y subrayó la importancia de las tensiones entre opuestos para la vida y el conocimiento. Su pensamiento prefigura intuiciones dialécticas posteriores.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Desde la perspectiva de Heráclito, el ser humano es un proceso: identidad y estabilidad se entienden como efectos temporales dentro de un flujo constante. Conocer es captar las leyes del cambio y adaptarse a la tensión de contrarios.</div></div>
+        </div></article><article class="card"><div class="name">Parménides <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">515 a.C. — 450 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Autor de una de las críticas más famosas al cambio aparente: sostuvo que el ser es uno, inmutable y eterno, y que las apariencias cambiantes del mundo sensible son engañosas. Introdujo la primacía del pensamiento racional (logos) frente a la sensación.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Parménides, la razón humana debe guiar la búsqueda de la verdad: el hombre alcanza conocimiento verdadero cuando confía en el pensamiento lógico que revela la unidad y estabilidad del ser, por encima de las percepciones engañosas.</div></div>
+        </div></article><article class="card"><div class="name">Anaxágoras <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">500 a.C. — 428 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Introdujo la noción de Nous (mente o inteligencia) como principio ordenante del cosmos. Anaxágoras explicó la diversidad del mundo mediante semillas o principios que contienen las cualidades de las cosas; su enfoque abrió la puerta a explicaciones naturales del orden cósmico.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">En su visión, el ser humano participa de la disposición racional del mundo: la mente (nous) es fundamental tanto para la estructura del universo como para la capacidad humana de comprender y ordenar la experiencia.</div></div>
+        </div></article><article class="card"><div class="name">Demócrito <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">460 a.C. — 370 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Junto a Leucipo, desarrolló el atomismo: todo está compuesto por átomos y vacío. Esta teoría fue una tentativa temprana de explicar la diversidad natural mediante componentes mínimos y leyes mecánicas; influyó en la física y la filosofía materialista posteriores.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Demócrito entendía al ser humano como un conjunto de elementos materiales: la mente y las sensaciones se derivan del movimiento y la disposición de los átomos. Su enfoque enfatiza explicaciones naturales y físicas de la vida mental.</div></div>
+        </div></article><article class="card"><div class="name">Protágoras <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">485 a.C. — 415 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Uno de los sofistas más influyentes; famoso por la máxima "el hombre es la medida de todas las cosas". Protágoras destacó la importancia de la retórica, la educación y la variabilidad cultural en la formación de juicios y verdades prácticas en la vida política y pública.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Protágoras, el conocimiento está mediado por la percepción humana y las convenciones sociales: la verdad puede variar según el punto de vista y el contexto cultural, lo que sitúa al ser humano en el centro de la valoración.</div></div>
+        </div></article><article class="card"><div class="name">Sócrates <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">470 a.C. — 399 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura clave de la filosofía ética; no dejó escritos, pero su método (la mayéutica o diálogo crítico) y su énfasis en la virtud influyeron profundamente. Sócrates buscaba definiciones claras de valores como la justicia y la piedad y proponía la autoexaminación como vía para vivir bien.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano es, ante todo, un agente moral y racional. Sócrates defendía que la vida examinada, guiada por la razón y por la búsqueda de la virtud, es la única vida que merece la pena ser vivida.</div></div>
+        </div></article><article class="card"><div class="name">Platón <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">427 a.C. — 347 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Discípulo de Sócrates y fundador de la Academia. Platón desarrolló la teoría de las Ideas o Formas: realidades perfectas y eternas de las que los objetos sensibles son copias. Escribió sobre política, ética, epistemología y estética (Diálogos como 'La República', 'Fedón').</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Platón concibe al ser humano como un compuesto de alma y cuerpo, donde el alma participa de las Ideas y aspira a recuperar su conocimiento original: la educación y la filosofía son medios para elevar el alma hacia la verdad y el bien.</div></div>
+        </div></article><article class="card"><div class="name">Aristóteles <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">384 a.C. — 322 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Alumno de Platón que sistematizó la lógica, la metafísica, la ética, la política y las ciencias naturales. Introdujo nociones esenciales como las cuatro causas, la sustancia y el fin (telos). Su ética de la virtud entendía la felicidad (eudaimonía) como actividad conforme a la excelencia racional.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Aristóteles define al ser humano como 'animal racional' (zoon logon echon): un ser cuya naturaleza incluye la capacidad de razón práctica y teórica. La realización humana pasa por cultivar virtudes que permiten alcanzar su fin último.</div></div>
+        </div></article><article class="card"><div class="name">Epicuro <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">341 a.C. — 270 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador del epicureísmo; sostuvo que el fin de la vida es la búsqueda de un placer entendido como ausencia de dolor (ataraxia): vida sencilla, amistad, reflexión y ausencia de superstición. Mantuvo un atomismo ético y naturalista.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Epicuro el ser humano es un ser sensible cuyo bienestar depende de gestionar deseos, cultivar amistades y evitar miedos irracionales, especialmente al cosmos y a la muerte.</div></div>
+        </div></article><article class="card"><div class="name">Zenón de Citio <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">334 a.C. — 262 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador del estoicismo, una escuela que enseñó la tranquilidad mediante la conformidad con la razón y la naturaleza. Los estoicos desarrollaron una ética de la virtud, autocontrol y resistencia ante la adversidad.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano forma parte de un orden racional (logos). La felicidad depende de vivir de acuerdo con la razón y la virtud, no de bienes externos: la autonomía moral es central.</div></div>
+        </div></article><article class="card"><div class="name">Pirró de Elida <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">360 a.C. — 270 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Líder del escepticismo antiguo: la suspensión del juicio (epoché) frente a afirmaciones dogmáticas conduce, según él, a la tranquilidad (ataraxia). Su postura desafía las certezas absolutas.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El humano está limitado en su capacidad de conocer con certeza; aceptar la incertidumbre y suspender juicios puede conducir al equilibrio emocional y a una vida más serena.</div></div>
+        </div></article><article class="card"><div class="name">Diógenes de Sinope <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">412 a.C. — 323 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Principal exponente del cinismo. Diógenes promovió una vida austera y coherente con la naturaleza, criticó convenciones sociales y buscó la autarquía (autosuficiencia). Sus acciones performativas eran forma de enseñanza.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Concepción aplicada: el ser humano debe liberarse de dependencias superfluas y vivir de manera honesta y auto-suficiente para alcanzar la libertad auténtica.</div></div>
+        </div></article><article class="card"><div class="name">San Agustín de Hipona <span class="era" style="background:var(--purple);color:#fff">Medieval</span></div>
+        <div class="meta">354 — 430</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Autor central de la patrística cristiana. Integró elementos platónicos con la doctrina cristiana para explicar el pecado original, la gracia y la ciudad de Dios. Sus confesiones combinan reflexión filosófica y autobiográfica.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano es criatura de Dios con voluntad y razón, pero marcado por el pecado; la redención y la verdadera orientación moral requieren la gracia divina y una vida de fe reflexiva.</div></div>
+        </div></article><article class="card"><div class="name">Santo Tomás de Aquino <span class="era" style="background:var(--purple);color:#fff">Medieval</span></div>
+        <div class="meta">1225 — 1274</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura clave de la escolástica: sintetizó la filosofía aristotélica con la teología cristiana. Desarrolló pruebas racionales de la existencia de Dios y una ética natural orientada al bien supremo.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Tomás, el ser humano es un ser racional hecho por Dios: posee alma inmortal y puede conocer verdades naturales y sobrenaturales. La razón y la fe se complementan en la búsqueda del fin último.</div></div>
+        </div></article><article class="card"><div class="name">Nicolás Maquiavelo <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1469 — 1527</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Considerado padre de la ciencia política moderna. En 'El Príncipe' analiza la adquisición y conservación del poder con realismo, separando la política de la moral normativa tradicional.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Visión pragmática del ser humano: agentes motivados por intereses, pasiones y cálculo; la política efectiva requiere entender estas dinámicas y diseñar instituciones que garanticen estabilidad.</div></div>
+        </div></article><article class="card"><div class="name">Giordano Bruno <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1548 — 1600</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Pensador que postuló un universo infinito y defendió la autonomía intelectual frente a la ortodoxia. Sus ideas sobre la infinitud cósmica y la libertad intelectual le costaron la persecución.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Bruno promovía una visión amplia del ser humano como partícipe en un cosmos sin límites, con capacidad para explorar y cuestionar las verdades establecidas.</div></div>
+        </div></article><article class="card"><div class="name">René Descartes <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1596 — 1650</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador del racionalismo moderno y del método científico basado en la duda metódica. Formuló el cogito ('pienso, luego existo') y propuso un dualismo entre res cogitans (mente) y res extensa (cuerpo).</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano es, primordialmente, una mente pensante que puede alcanzar certezas indudables mediante la razón. El dualismo cartesiano separa una esfera mental autónoma del mundo físico.</div></div>
+        </div></article><article class="card"><div class="name">Thomas Hobbes <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1588 — 1679</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo político que en 'Leviatán' describió el estado natural como conflicto de todos contra todos y propuso el contrato social para instaurar un poder central fuerte que garantice seguridad.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Hobbes ve al ser humano como impulsado por deseos y temores: en ausencia de autoridad, prima la competencia. La racionalidad conduce a la creación de instituciones que aseguren la supervivencia y la paz.</div></div>
+        </div></article><article class="card"><div class="name">John Locke <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1632 — 1704</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Padre del empirismo moderno y de teorías políticas liberales. Defendió la tabula rasa (la mente no tiene ideas innatas), los derechos naturales y el gobierno como protector de la vida, la libertad y la propiedad.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano adquiere conocimiento por la experiencia; posee derechos naturales y dignidad que justifican límites al poder político y la protección de la libertad individual.</div></div>
+        </div></article><article class="card"><div class="name">George Berkeley <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1685 — 1753</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo del idealismo inmaterialista que afirmó que la existencia de los objetos depende de ser percibidos ('esse est percipi'), rechazando el materialismo mecanicista.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Berkeley sitúa al ser humano en el centro de la realidad perceptual: la mente y la percepción hacen que el mundo exista para nosotros; la continuidad de la realidad se explica por la percepción divina cuando no hay humanos presentes.</div></div>
+        </div></article><article class="card"><div class="name">Montesquieu <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1689 — 1755</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Importante teórico político de la Ilustración; su estudio de los sistemas políticos y su propuesta de separación de poderes influyeron en constituciones modernas. Analizó cómo leyes, clima y costumbres afectan las instituciones.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Considera al ser humano como moldeado por instituciones y contextos; la organización política adecuada permite equilibrar libertades y seguridad, favoreciendo el desarrollo humano.</div></div>
+        </div></article><article class="card"><div class="name">Voltaire <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1694 — 1778</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura central de la Ilustración: crítico de la intolerancia y la superstición, defensor de la libertad de expresión, la razón y la tolerancia. Sus escritos combinaron erudición y sátira.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Voltaire creyó en las capacidades críticas del ser humano: la libertad y la educación permiten combatir la superstición y mejorar la sociedad.</div></div>
+        </div></article><article class="card"><div class="name">Jean-Jacques Rousseau <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1712 — 1778</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Autore de 'El contrato social' y 'Emilio'; analizó cómo las desigualdades sociales se originan y propuso una educación natural. Sostuvo que la sociedad puede corromper la bondad natural del individuo.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Rousseau defendió que el ser humano es bueno por naturaleza pero es deformado por instituciones injustas; la educación y las formas de convivencia pueden restaurar la autenticidad y la libertad genuina.</div></div>
+        </div></article><article class="card"><div class="name">David Hume <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1711 — 1776</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Empirista y escéptico: analizó la naturaleza de la causalidad, las creencias y la moralidad basada en sentimientos. Hume cuestionó la certeza de la inferencia inductiva y destacó el papel de las pasiones.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Hume, el ser humano es una mezcla de impresiones y sentimientos; la razón es limitada y las motivaciones morales están profundamente ligadas a las emociones y costumbres.</div></div>
+        </div></article><article class="card"><div class="name">Immanuel Kant <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1724 — 1804</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Revolucionó la filosofía con la 'Crítica de la razón pura', proponiendo que la mente estructura parte del conocimiento. En ética, desarrolló el imperativo categórico: la moralidad basada en principios universales y el respeto a la autonomía.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Kant ve al ser humano como sujeto autónomo y legislador moral: posee dignidad intrínseca por su capacidad de racionalidad práctica y debe ser tratado como fin en sí mismo.</div></div>
+        </div></article><article class="card"><div class="name">Karl Marx <span class="era" style="background:var(--green);color:#fff">Contemporánea</span></div>
+        <div class="meta">1818 — 1883</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo y economista fundador del materialismo histórico: analizó cómo las condiciones materiales y las relaciones de producción determinan estructuras sociales y conciencia. Criticó la explotación capitalista y propuso la transformación social mediante la acción colectiva.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Marx concibe al ser humano como un ser social y productivo: la naturaleza humana se realiza en el trabajo y en las relaciones sociales; las formas económicas modelan la identidad y la posibilidad de emancipación.</div></div>
+        </div></article><article class="card"><div class="name">Friedrich Nietzsche <span class="era" style="background:var(--green);color:#fff">Contemporánea</span></div>
+        <div class="meta">1844 — 1900</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Crítico de la moral tradicional, la religión y la cultura moderna; introdujo conceptos como la voluntad de poder, el eterno retorno y el Übermensch. Su estilo aforístico y genealógico analizó el origen de los valores.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Nietzsche propone un ser humano creativo, capaz de superar valores impuestos y crear nuevos significados; la vida debe afirmarse en una postura de crecimiento y auto-superación.</div></div>
+        </div></article><article class="card"><div class="name">Jean-Paul Sartre <span class="era" style="background:var(--green);color:#fff">Contemporánea</span></div>
+        <div class="meta">1905 — 1980</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura central del existencialismo del siglo XX: enfatizó la libertad radical, la responsabilidad individual y la necesidad de dar sentido a la propia vida. Su obra filosófica y literaria exploró la condición humana en situaciones concretas.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Sartre sostiene que "la existencia precede a la esencia": el ser humano no tiene una naturaleza dada, sino que se constituye por sus acciones; la libertad implica responsabilidad y la posibilidad de autenticidad.</div></div>
+        </div></article><article class="card"><div class="name">Tales de Mileto <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">624 a.C. — 548 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Considerado tradicionalmente el primer filósofo griego. Tales buscó explicaciones racionales para los fenómenos naturales y planteó que el principio (arjé) de todas las cosas era el agua. Sus observaciones y razonamientos sobre geometría y astronomía sentaron las bases para una aproximación científica y racional al mundo, separada de los mitos.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Tales, el ser humano forma parte de un cosmos ordenado por principios naturales. La capacidad de razonar y observar permite comprender el entorno; así, la humanidad puede acceder al conocimiento mediante la investigación y la medida.</div></div>
+        </div></article><article class="card"><div class="name">Pitágoras <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">569 a.C. — 475 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador de la escuela pitagórica, donde las matemáticas, la música y la cosmología estaban íntimamente relacionadas. Pitágoras y sus seguidores sostuvieron que los números son la clave para entender la estructura del universo; desarrollaron teoremas matemáticos y una visión ética que valoraba la armonía y la purificación del alma.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Pitágoras defendió una concepción en la que el alma tiene importancia central: el ser humano posee una dimensión espiritual que puede purificarse y acercarse a la armonía universal a través del conocimiento y la disciplina.</div></div>
+        </div></article><article class="card"><div class="name">Heráclito <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">535 a.C. — 475 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo del cambio: su lema "panta rhei" (todo fluye) resume su idea de que la realidad está en constante transformación. Identificó el fuego como un principio dinámico y subrayó la importancia de las tensiones entre opuestos para la vida y el conocimiento. Su pensamiento prefigura intuiciones dialécticas posteriores.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Desde la perspectiva de Heráclito, el ser humano es un proceso: identidad y estabilidad se entienden como efectos temporales dentro de un flujo constante. Conocer es captar las leyes del cambio y adaptarse a la tensión de contrarios.</div></div>
+        </div></article><article class="card"><div class="name">Parménides <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">515 a.C. — 450 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Autor de una de las críticas más famosas al cambio aparente: sostuvo que el ser es uno, inmutable y eterno, y que las apariencias cambiantes del mundo sensible son engañosas. Introdujo la primacía del pensamiento racional (logos) frente a la sensación.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Parménides, la razón humana debe guiar la búsqueda de la verdad: el hombre alcanza conocimiento verdadero cuando confía en el pensamiento lógico que revela la unidad y estabilidad del ser, por encima de las percepciones engañosas.</div></div>
+        </div></article><article class="card"><div class="name">Anaxágoras <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">500 a.C. — 428 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Introdujo la noción de Nous (mente o inteligencia) como principio ordenante del cosmos. Anaxágoras explicó la diversidad del mundo mediante semillas o principios que contienen las cualidades de las cosas; su enfoque abrió la puerta a explicaciones naturales del orden cósmico.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">En su visión, el ser humano participa de la disposición racional del mundo: la mente (nous) es fundamental tanto para la estructura del universo como para la capacidad humana de comprender y ordenar la experiencia.</div></div>
+        </div></article><article class="card"><div class="name">Demócrito <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">460 a.C. — 370 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Junto a Leucipo, desarrolló el atomismo: todo está compuesto por átomos y vacío. Esta teoría fue una tentativa temprana de explicar la diversidad natural mediante componentes mínimos y leyes mecánicas; influyó en la física y la filosofía materialista posteriores.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Demócrito entendía al ser humano como un conjunto de elementos materiales: la mente y las sensaciones se derivan del movimiento y la disposición de los átomos. Su enfoque enfatiza explicaciones naturales y físicas de la vida mental.</div></div>
+        </div></article><article class="card"><div class="name">Protágoras <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">485 a.C. — 415 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Uno de los sofistas más influyentes; famoso por la máxima "el hombre es la medida de todas las cosas". Protágoras destacó la importancia de la retórica, la educación y la variabilidad cultural en la formación de juicios y verdades prácticas en la vida política y pública.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Protágoras, el conocimiento está mediado por la percepción humana y las convenciones sociales: la verdad puede variar según el punto de vista y el contexto cultural, lo que sitúa al ser humano en el centro de la valoración.</div></div>
+        </div></article><article class="card"><div class="name">Sócrates <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">470 a.C. — 399 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura clave de la filosofía ética; no dejó escritos, pero su método (la mayéutica o diálogo crítico) y su énfasis en la virtud influyeron profundamente. Sócrates buscaba definiciones claras de valores como la justicia y la piedad y proponía la autoexaminación como vía para vivir bien.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano es, ante todo, un agente moral y racional. Sócrates defendía que la vida examinada, guiada por la razón y por la búsqueda de la virtud, es la única vida que merece la pena ser vivida.</div></div>
+        </div></article><article class="card"><div class="name">Platón <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">427 a.C. — 347 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Discípulo de Sócrates y fundador de la Academia. Platón desarrolló la teoría de las Ideas o Formas: realidades perfectas y eternas de las que los objetos sensibles son copias. Escribió sobre política, ética, epistemología y estética (Diálogos como 'La República', 'Fedón').</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Platón concibe al ser humano como un compuesto de alma y cuerpo, donde el alma participa de las Ideas y aspira a recuperar su conocimiento original: la educación y la filosofía son medios para elevar el alma hacia la verdad y el bien.</div></div>
+        </div></article><article class="card"><div class="name">Aristóteles <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">384 a.C. — 322 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Alumno de Platón que sistematizó la lógica, la metafísica, la ética, la política y las ciencias naturales. Introdujo nociones esenciales como las cuatro causas, la sustancia y el fin (telos). Su ética de la virtud entendía la felicidad (eudaimonía) como actividad conforme a la excelencia racional.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Aristóteles define al ser humano como 'animal racional' (zoon logon echon): un ser cuya naturaleza incluye la capacidad de razón práctica y teórica. La realización humana pasa por cultivar virtudes que permiten alcanzar su fin último.</div></div>
+        </div></article><article class="card"><div class="name">Epicuro <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">341 a.C. — 270 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador del epicureísmo; sostuvo que el fin de la vida es la búsqueda de un placer entendido como ausencia de dolor (ataraxia): vida sencilla, amistad, reflexión y ausencia de superstición. Mantuvo un atomismo ético y naturalista.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Epicuro el ser humano es un ser sensible cuyo bienestar depende de gestionar deseos, cultivar amistades y evitar miedos irracionales, especialmente al cosmos y a la muerte.</div></div>
+        </div></article><article class="card"><div class="name">Zenón de Citio <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">334 a.C. — 262 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador del estoicismo, una escuela que enseñó la tranquilidad mediante la conformidad con la razón y la naturaleza. Los estoicos desarrollaron una ética de la virtud, autocontrol y resistencia ante la adversidad.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano forma parte de un orden racional (logos). La felicidad depende de vivir de acuerdo con la razón y la virtud, no de bienes externos: la autonomía moral es central.</div></div>
+        </div></article><article class="card"><div class="name">Pirró de Elida <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">360 a.C. — 270 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Líder del escepticismo antiguo: la suspensión del juicio (epoché) frente a afirmaciones dogmáticas conduce, según él, a la tranquilidad (ataraxia). Su postura desafía las certezas absolutas.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El humano está limitado en su capacidad de conocer con certeza; aceptar la incertidumbre y suspender juicios puede conducir al equilibrio emocional y a una vida más serena.</div></div>
+        </div></article><article class="card"><div class="name">Diógenes de Sinope <span class="era" style="background:var(--gold);color:#fff">Antigüedad</span></div>
+        <div class="meta">412 a.C. — 323 a.C.</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Principal exponente del cinismo. Diógenes promovió una vida austera y coherente con la naturaleza, criticó convenciones sociales y buscó la autarquía (autosuficiencia). Sus acciones performativas eran forma de enseñanza.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Concepción aplicada: el ser humano debe liberarse de dependencias superfluas y vivir de manera honesta y auto-suficiente para alcanzar la libertad auténtica.</div></div>
+        </div></article><article class="card"><div class="name">San Agustín de Hipona <span class="era" style="background:var(--purple);color:#fff">Medieval</span></div>
+        <div class="meta">354 — 430</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Autor central de la patrística cristiana. Integró elementos platónicos con la doctrina cristiana para explicar el pecado original, la gracia y la ciudad de Dios. Sus confesiones combinan reflexión filosófica y autobiográfica.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano es criatura de Dios con voluntad y razón, pero marcado por el pecado; la redención y la verdadera orientación moral requieren la gracia divina y una vida de fe reflexiva.</div></div>
+        </div></article><article class="card"><div class="name">Santo Tomás de Aquino <span class="era" style="background:var(--purple);color:#fff">Medieval</span></div>
+        <div class="meta">1225 — 1274</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura clave de la escolástica: sintetizó la filosofía aristotélica con la teología cristiana. Desarrolló pruebas racionales de la existencia de Dios y una ética natural orientada al bien supremo.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Tomás, el ser humano es un ser racional hecho por Dios: posee alma inmortal y puede conocer verdades naturales y sobrenaturales. La razón y la fe se complementan en la búsqueda del fin último.</div></div>
+        </div></article><article class="card"><div class="name">Nicolás Maquiavelo <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1469 — 1527</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Considerado padre de la ciencia política moderna. En 'El Príncipe' analiza la adquisición y conservación del poder con realismo, separando la política de la moral normativa tradicional.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Visión pragmática del ser humano: agentes motivados por intereses, pasiones y cálculo; la política efectiva requiere entender estas dinámicas y diseñar instituciones que garanticen estabilidad.</div></div>
+        </div></article><article class="card"><div class="name">Giordano Bruno <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1548 — 1600</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Pensador que postuló un universo infinito y defendió la autonomía intelectual frente a la ortodoxia. Sus ideas sobre la infinitud cósmica y la libertad intelectual le costaron la persecución.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Bruno promovía una visión amplia del ser humano como partícipe en un cosmos sin límites, con capacidad para explorar y cuestionar las verdades establecidas.</div></div>
+        </div></article><article class="card"><div class="name">René Descartes <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1596 — 1650</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Fundador del racionalismo moderno y del método científico basado en la duda metódica. Formuló el cogito ('pienso, luego existo') y propuso un dualismo entre res cogitans (mente) y res extensa (cuerpo).</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano es, primordialmente, una mente pensante que puede alcanzar certezas indudables mediante la razón. El dualismo cartesiano separa una esfera mental autónoma del mundo físico.</div></div>
+        </div></article><article class="card"><div class="name">Thomas Hobbes <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1588 — 1679</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo político que en 'Leviatán' describió el estado natural como conflicto de todos contra todos y propuso el contrato social para instaurar un poder central fuerte que garantice seguridad.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Hobbes ve al ser humano como impulsado por deseos y temores: en ausencia de autoridad, prima la competencia. La racionalidad conduce a la creación de instituciones que aseguren la supervivencia y la paz.</div></div>
+        </div></article><article class="card"><div class="name">John Locke <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1632 — 1704</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Padre del empirismo moderno y de teorías políticas liberales. Defendió la tabula rasa (la mente no tiene ideas innatas), los derechos naturales y el gobierno como protector de la vida, la libertad y la propiedad.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">El ser humano adquiere conocimiento por la experiencia; posee derechos naturales y dignidad que justifican límites al poder político y la protección de la libertad individual.</div></div>
+        </div></article><article class="card"><div class="name">George Berkeley <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1685 — 1753</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo del idealismo inmaterialista que afirmó que la existencia de los objetos depende de ser percibidos ('esse est percipi'), rechazando el materialismo mecanicista.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Berkeley sitúa al ser humano en el centro de la realidad perceptual: la mente y la percepción hacen que el mundo exista para nosotros; la continuidad de la realidad se explica por la percepción divina cuando no hay humanos presentes.</div></div>
+        </div></article><article class="card"><div class="name">Montesquieu <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1689 — 1755</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Importante teórico político de la Ilustración; su estudio de los sistemas políticos y su propuesta de separación de poderes influyeron en constituciones modernas. Analizó cómo leyes, clima y costumbres afectan las instituciones.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Considera al ser humano como moldeado por instituciones y contextos; la organización política adecuada permite equilibrar libertades y seguridad, favoreciendo el desarrollo humano.</div></div>
+        </div></article><article class="card"><div class="name">Voltaire <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1694 — 1778</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura central de la Ilustración: crítico de la intolerancia y la superstición, defensor de la libertad de expresión, la razón y la tolerancia. Sus escritos combinaron erudición y sátira.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Voltaire creyó en las capacidades críticas del ser humano: la libertad y la educación permiten combatir la superstición y mejorar la sociedad.</div></div>
+        </div></article><article class="card"><div class="name">Jean-Jacques Rousseau <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1712 — 1778</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Autore de 'El contrato social' y 'Emilio'; analizó cómo las desigualdades sociales se originan y propuso una educación natural. Sostuvo que la sociedad puede corromper la bondad natural del individuo.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Rousseau defendió que el ser humano es bueno por naturaleza pero es deformado por instituciones injustas; la educación y las formas de convivencia pueden restaurar la autenticidad y la libertad genuina.</div></div>
+        </div></article><article class="card"><div class="name">David Hume <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1711 — 1776</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Empirista y escéptico: analizó la naturaleza de la causalidad, las creencias y la moralidad basada en sentimientos. Hume cuestionó la certeza de la inferencia inductiva y destacó el papel de las pasiones.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Para Hume, el ser humano es una mezcla de impresiones y sentimientos; la razón es limitada y las motivaciones morales están profundamente ligadas a las emociones y costumbres.</div></div>
+        </div></article><article class="card"><div class="name">Immanuel Kant <span class="era" style="background:var(--blue);color:#fff">Moderna</span></div>
+        <div class="meta">1724 — 1804</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Revolucionó la filosofía con la 'Crítica de la razón pura', proponiendo que la mente estructura parte del conocimiento. En ética, desarrolló el imperativo categórico: la moralidad basada en principios universales y el respeto a la autonomía.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Kant ve al ser humano como sujeto autónomo y legislador moral: posee dignidad intrínseca por su capacidad de racionalidad práctica y debe ser tratado como fin en sí mismo.</div></div>
+        </div></article><article class="card"><div class="name">Karl Marx <span class="era" style="background:var(--green);color:#fff">Contemporánea</span></div>
+        <div class="meta">1818 — 1883</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Filósofo y economista fundador del materialismo histórico: analizó cómo las condiciones materiales y las relaciones de producción determinan estructuras sociales y conciencia. Criticó la explotación capitalista y propuso la transformación social mediante la acción colectiva.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Marx concibe al ser humano como un ser social y productivo: la naturaleza humana se realiza en el trabajo y en las relaciones sociales; las formas económicas modelan la identidad y la posibilidad de emancipación.</div></div>
+        </div></article><article class="card"><div class="name">Friedrich Nietzsche <span class="era" style="background:var(--green);color:#fff">Contemporánea</span></div>
+        <div class="meta">1844 — 1900</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Crítico de la moral tradicional, la religión y la cultura moderna; introdujo conceptos como la voluntad de poder, el eterno retorno y el Übermensch. Su estilo aforístico y genealógico analizó el origen de los valores.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Nietzsche propone un ser humano creativo, capaz de superar valores impuestos y crear nuevos significados; la vida debe afirmarse en una postura de crecimiento y auto-superación.</div></div>
+        </div></article><article class="card"><div class="name">Jean-Paul Sartre <span class="era" style="background:var(--green);color:#fff">Contemporánea</span></div>
+        <div class="meta">1905 — 1980</div>
+        <div class="content">
+          <div class="section"><b>Aportaciones principales</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Figura central del existencialismo del siglo XX: enfatizó la libertad radical, la responsabilidad individual y la necesidad de dar sentido a la propia vida. Su obra filosófica y literaria exploró la condición humana en situaciones concretas.</div></div>
+          <div class="section"><b>Concepción del ser humano</b><div style="margin-top:6px;color:#dfefff;font-size:14px">Sartre sostiene que "la existencia precede a la esencia": el ser humano no tiene una naturaleza dada, sino que se constituye por sus acciones; la libertad implica responsabilidad y la posibilidad de autenticidad.</div></div>
+        </div></article></div>
+  </div>
+
+  <footer>Fuentes: Encyclopædia Britannica; Stanford Encyclopedia of Philosophy; Internet Encyclopedia of Philosophy; adaptado a lenguaje didáctico.</footer>
+
+  <script>
+    // Colores por época
+    const eraColor = {"Antigüedad":"--gold","Medieval":"--purple","Moderna":"--blue","Contemporánea":"--green"};
+
+    // Datos: 30 filósofos con textos didácticos y completos (no demasiado técnicos)
+    const data = [
+      {nombre:'Tales de Mileto', nacimiento:-624, muerte:-548, era:'Antigüedad', aport:`Considerado tradicionalmente el primer filósofo griego. Tales buscó explicaciones racionales para los fenómenos naturales y planteó que el principio (arjé) de todas las cosas era el agua. Sus observaciones y razonamientos sobre geometría y astronomía sentaron las bases para una aproximación científica y racional al mundo, separada de los mitos.` , concep:`Para Tales, el ser humano forma parte de un cosmos ordenado por principios naturales. La capacidad de razonar y observar permite comprender el entorno; así, la humanidad puede acceder al conocimiento mediante la investigación y la medida.`},
+
+      {nombre:'Pitágoras', nacimiento:-569, muerte:-475, era:'Antigüedad', aport:`Fundador de la escuela pitagórica, donde las matemáticas, la música y la cosmología estaban íntimamente relacionadas. Pitágoras y sus seguidores sostuvieron que los números son la clave para entender la estructura del universo; desarrollaron teoremas matemáticos y una visión ética que valoraba la armonía y la purificación del alma.`, concep:`Pitágoras defendió una concepción en la que el alma tiene importancia central: el ser humano posee una dimensión espiritual que puede purificarse y acercarse a la armonía universal a través del conocimiento y la disciplina.`},
+
+      {nombre:'Heráclito', nacimiento:-535, muerte:-475, era:'Antigüedad', aport:`Filósofo del cambio: su lema "panta rhei" (todo fluye) resume su idea de que la realidad está en constante transformación. Identificó el fuego como un principio dinámico y subrayó la importancia de las tensiones entre opuestos para la vida y el conocimiento. Su pensamiento prefigura intuiciones dialécticas posteriores.`, concep:`Desde la perspectiva de Heráclito, el ser humano es un proceso: identidad y estabilidad se entienden como efectos temporales dentro de un flujo constante. Conocer es captar las leyes del cambio y adaptarse a la tensión de contrarios.`},
+
+      {nombre:'Parménides', nacimiento:-515, muerte:-450, era:'Antigüedad', aport:`Autor de una de las críticas más famosas al cambio aparente: sostuvo que el ser es uno, inmutable y eterno, y que las apariencias cambiantes del mundo sensible son engañosas. Introdujo la primacía del pensamiento racional (logos) frente a la sensación.`, concep:`Para Parménides, la razón humana debe guiar la búsqueda de la verdad: el hombre alcanza conocimiento verdadero cuando confía en el pensamiento lógico que revela la unidad y estabilidad del ser, por encima de las percepciones engañosas.`},
+
+      {nombre:'Anaxágoras', nacimiento:-500, muerte:-428, era:'Antigüedad', aport:`Introdujo la noción de Nous (mente o inteligencia) como principio ordenante del cosmos. Anaxágoras explicó la diversidad del mundo mediante semillas o principios que contienen las cualidades de las cosas; su enfoque abrió la puerta a explicaciones naturales del orden cósmico.`, concep:`En su visión, el ser humano participa de la disposición racional del mundo: la mente (nous) es fundamental tanto para la estructura del universo como para la capacidad humana de comprender y ordenar la experiencia.`},
+
+      {nombre:'Demócrito', nacimiento:-460, muerte:-370, era:'Antigüedad', aport:`Junto a Leucipo, desarrolló el atomismo: todo está compuesto por átomos y vacío. Esta teoría fue una tentativa temprana de explicar la diversidad natural mediante componentes mínimos y leyes mecánicas; influyó en la física y la filosofía materialista posteriores.`, concep:`Demócrito entendía al ser humano como un conjunto de elementos materiales: la mente y las sensaciones se derivan del movimiento y la disposición de los átomos. Su enfoque enfatiza explicaciones naturales y físicas de la vida mental.`},
+
+      {nombre:'Protágoras', nacimiento:-485, muerte:-415, era:'Antigüedad', aport:`Uno de los sofistas más influyentes; famoso por la máxima "el hombre es la medida de todas las cosas". Protágoras destacó la importancia de la retórica, la educación y la variabilidad cultural en la formación de juicios y verdades prácticas en la vida política y pública.`, concep:`Para Protágoras, el conocimiento está mediado por la percepción humana y las convenciones sociales: la verdad puede variar según el punto de vista y el contexto cultural, lo que sitúa al ser humano en el centro de la valoración.`},
+
+      {nombre:'Sócrates', nacimiento:-470, muerte:-399, era:'Antigüedad', aport:`Figura clave de la filosofía ética; no dejó escritos, pero su método (la mayéutica o diálogo crítico) y su énfasis en la virtud influyeron profundamente. Sócrates buscaba definiciones claras de valores como la justicia y la piedad y proponía la autoexaminación como vía para vivir bien.`, concep:`El ser humano es, ante todo, un agente moral y racional. Sócrates defendía que la vida examinada, guiada por la razón y por la búsqueda de la virtud, es la única vida que merece la pena ser vivida.`},
+
+      {nombre:'Platón', nacimiento:-427, muerte:-347, era:'Antigüedad', aport:`Discípulo de Sócrates y fundador de la Academia. Platón desarrolló la teoría de las Ideas o Formas: realidades perfectas y eternas de las que los objetos sensibles son copias. Escribió sobre política, ética, epistemología y estética (Diálogos como 'La República', 'Fedón').`, concep:`Platón concibe al ser humano como un compuesto de alma y cuerpo, donde el alma participa de las Ideas y aspira a recuperar su conocimiento original: la educación y la filosofía son medios para elevar el alma hacia la verdad y el bien.`},
+
+      {nombre:'Aristóteles', nacimiento:-384, muerte:-322, era:'Antigüedad', aport:`Alumno de Platón que sistematizó la lógica, la metafísica, la ética, la política y las ciencias naturales. Introdujo nociones esenciales como las cuatro causas, la sustancia y el fin (telos). Su ética de la virtud entendía la felicidad (eudaimonía) como actividad conforme a la excelencia racional.`, concep:`Aristóteles define al ser humano como 'animal racional' (zoon logon echon): un ser cuya naturaleza incluye la capacidad de razón práctica y teórica. La realización humana pasa por cultivar virtudes que permiten alcanzar su fin último.`},
+
+      {nombre:'Epicuro', nacimiento:-341, muerte:-270, era:'Antigüedad', aport:`Fundador del epicureísmo; sostuvo que el fin de la vida es la búsqueda de un placer entendido como ausencia de dolor (ataraxia): vida sencilla, amistad, reflexión y ausencia de superstición. Mantuvo un atomismo ético y naturalista.`, concep:`Para Epicuro el ser humano es un ser sensible cuyo bienestar depende de gestionar deseos, cultivar amistades y evitar miedos irracionales, especialmente al cosmos y a la muerte.`},
+
+      {nombre:'Zenón de Citio', nacimiento:-334, muerte:-262, era:'Antigüedad', aport:`Fundador del estoicismo, una escuela que enseñó la tranquilidad mediante la conformidad con la razón y la naturaleza. Los estoicos desarrollaron una ética de la virtud, autocontrol y resistencia ante la adversidad.`, concep:`El ser humano forma parte de un orden racional (logos). La felicidad depende de vivir de acuerdo con la razón y la virtud, no de bienes externos: la autonomía moral es central.`},
+
+      {nombre:'Pirró de Elida', nacimiento:-360, muerte:-270, era:'Antigüedad', aport:`Líder del escepticismo antiguo: la suspensión del juicio (epoché) frente a afirmaciones dogmáticas conduce, según él, a la tranquilidad (ataraxia). Su postura desafía las certezas absolutas.`, concep:`El humano está limitado en su capacidad de conocer con certeza; aceptar la incertidumbre y suspender juicios puede conducir al equilibrio emocional y a una vida más serena.`},
+
+      {nombre:'Diógenes de Sinope', nacimiento:-412, muerte:-323, era:'Antigüedad', aport:`Principal exponente del cinismo. Diógenes promovió una vida austera y coherente con la naturaleza, criticó convenciones sociales y buscó la autarquía (autosuficiencia). Sus acciones performativas eran forma de enseñanza.`, concep:`Concepción aplicada: el ser humano debe liberarse de dependencias superfluas y vivir de manera honesta y auto-suficiente para alcanzar la libertad auténtica.`},
+
+      {nombre:'San Agustín de Hipona', nacimiento:354, muerte:430, era:'Medieval', aport:`Autor central de la patrística cristiana. Integró elementos platónicos con la doctrina cristiana para explicar el pecado original, la gracia y la ciudad de Dios. Sus confesiones combinan reflexión filosófica y autobiográfica.`, concep:`El ser humano es criatura de Dios con voluntad y razón, pero marcado por el pecado; la redención y la verdadera orientación moral requieren la gracia divina y una vida de fe reflexiva.`},
+
+      {nombre:'Santo Tomás de Aquino', nacimiento:1225, muerte:1274, era:'Medieval', aport:`Figura clave de la escolástica: sintetizó la filosofía aristotélica con la teología cristiana. Desarrolló pruebas racionales de la existencia de Dios y una ética natural orientada al bien supremo.`, concep:`Para Tomás, el ser humano es un ser racional hecho por Dios: posee alma inmortal y puede conocer verdades naturales y sobrenaturales. La razón y la fe se complementan en la búsqueda del fin último.`},
+
+      {nombre:'Nicolás Maquiavelo', nacimiento:1469, muerte:1527, era:'Moderna', aport:`Considerado padre de la ciencia política moderna. En 'El Príncipe' analiza la adquisición y conservación del poder con realismo, separando la política de la moral normativa tradicional.`, concep:`Visión pragmática del ser humano: agentes motivados por intereses, pasiones y cálculo; la política efectiva requiere entender estas dinámicas y diseñar instituciones que garanticen estabilidad.`},
+
+      {nombre:'Giordano Bruno', nacimiento:1548, muerte:1600, era:'Moderna', aport:`Pensador que postuló un universo infinito y defendió la autonomía intelectual frente a la ortodoxia. Sus ideas sobre la infinitud cósmica y la libertad intelectual le costaron la persecución.`, concep:`Bruno promovía una visión amplia del ser humano como partícipe en un cosmos sin límites, con capacidad para explorar y cuestionar las verdades establecidas.`},
+
+      {nombre:'René Descartes', nacimiento:1596, muerte:1650, era:'Moderna', aport:`Fundador del racionalismo moderno y del método científico basado en la duda metódica. Formuló el cogito ('pienso, luego existo') y propuso un dualismo entre res cogitans (mente) y res extensa (cuerpo).`, concep:`El ser humano es, primordialmente, una mente pensante que puede alcanzar certezas indudables mediante la razón. El dualismo cartesiano separa una esfera mental autónoma del mundo físico.`},
+
+      {nombre:'Thomas Hobbes', nacimiento:1588, muerte:1679, era:'Moderna', aport:`Filósofo político que en 'Leviatán' describió el estado natural como conflicto de todos contra todos y propuso el contrato social para instaurar un poder central fuerte que garantice seguridad.` , concep:`Hobbes ve al ser humano como impulsado por deseos y temores: en ausencia de autoridad, prima la competencia. La racionalidad conduce a la creación de instituciones que aseguren la supervivencia y la paz.`},
+
+      {nombre:'John Locke', nacimiento:1632, muerte:1704, era:'Moderna', aport:`Padre del empirismo moderno y de teorías políticas liberales. Defendió la tabula rasa (la mente no tiene ideas innatas), los derechos naturales y el gobierno como protector de la vida, la libertad y la propiedad.` , concep:`El ser humano adquiere conocimiento por la experiencia; posee derechos naturales y dignidad que justifican límites al poder político y la protección de la libertad individual.`},
+
+      {nombre:'George Berkeley', nacimiento:1685, muerte:1753, era:'Moderna', aport:`Filósofo del idealismo inmaterialista que afirmó que la existencia de los objetos depende de ser percibidos ('esse est percipi'), rechazando el materialismo mecanicista.` , concep:`Berkeley sitúa al ser humano en el centro de la realidad perceptual: la mente y la percepción hacen que el mundo exista para nosotros; la continuidad de la realidad se explica por la percepción divina cuando no hay humanos presentes.`},
+
+      {nombre:'Montesquieu', nacimiento:1689, muerte:1755, era:'Moderna', aport:`Importante teórico político de la Ilustración; su estudio de los sistemas políticos y su propuesta de separación de poderes influyeron en constituciones modernas. Analizó cómo leyes, clima y costumbres afectan las instituciones.` , concep:`Considera al ser humano como moldeado por instituciones y contextos; la organización política adecuada permite equilibrar libertades y seguridad, favoreciendo el desarrollo humano.`},
+
+      {nombre:'Voltaire', nacimiento:1694, muerte:1778, era:'Moderna', aport:`Figura central de la Ilustración: crítico de la intolerancia y la superstición, defensor de la libertad de expresión, la razón y la tolerancia. Sus escritos combinaron erudición y sátira.` , concep:`Voltaire creyó en las capacidades críticas del ser humano: la libertad y la educación permiten combatir la superstición y mejorar la sociedad.`},
+
+      {nombre:'Jean-Jacques Rousseau', nacimiento:1712, muerte:1778, era:'Moderna', aport:`Autore de 'El contrato social' y 'Emilio'; analizó cómo las desigualdades sociales se originan y propuso una educación natural. Sostuvo que la sociedad puede corromper la bondad natural del individuo.` , concep:`Rousseau defendió que el ser humano es bueno por naturaleza pero es deformado por instituciones injustas; la educación y las formas de convivencia pueden restaurar la autenticidad y la libertad genuina.`},
+
+      {nombre:'David Hume', nacimiento:1711, muerte:1776, era:'Moderna', aport:`Empirista y escéptico: analizó la naturaleza de la causalidad, las creencias y la moralidad basada en sentimientos. Hume cuestionó la certeza de la inferencia inductiva y destacó el papel de las pasiones.` , concep:`Para Hume, el ser humano es una mezcla de impresiones y sentimientos; la razón es limitada y las motivaciones morales están profundamente ligadas a las emociones y costumbres.`},
+
+      {nombre:'Immanuel Kant', nacimiento:1724, muerte:1804, era:'Moderna', aport:`Revolucionó la filosofía con la 'Crítica de la razón pura', proponiendo que la mente estructura parte del conocimiento. En ética, desarrolló el imperativo categórico: la moralidad basada en principios universales y el respeto a la autonomía.` , concep:`Kant ve al ser humano como sujeto autónomo y legislador moral: posee dignidad intrínseca por su capacidad de racionalidad práctica y debe ser tratado como fin en sí mismo.`},
+
+      {nombre:'Karl Marx', nacimiento:1818, muerte:1883, era:'Contemporánea', aport:`Filósofo y economista fundador del materialismo histórico: analizó cómo las condiciones materiales y las relaciones de producción determinan estructuras sociales y conciencia. Criticó la explotación capitalista y propuso la transformación social mediante la acción colectiva.` , concep:`Marx concibe al ser humano como un ser social y productivo: la naturaleza humana se realiza en el trabajo y en las relaciones sociales; las formas económicas modelan la identidad y la posibilidad de emancipación.`},
+
+      {nombre:'Friedrich Nietzsche', nacimiento:1844, muerte:1900, era:'Contemporánea', aport:`Crítico de la moral tradicional, la religión y la cultura moderna; introdujo conceptos como la voluntad de poder, el eterno retorno y el Übermensch. Su estilo aforístico y genealógico analizó el origen de los valores.` , concep:`Nietzsche propone un ser humano creativo, capaz de superar valores impuestos y crear nuevos significados; la vida debe afirmarse en una postura de crecimiento y auto-superación.`},
+
+      {nombre:'Jean-Paul Sartre', nacimiento:1905, muerte:1980, era:'Contemporánea', aport:`Figura central del existencialismo del siglo XX: enfatizó la libertad radical, la responsabilidad individual y la necesidad de dar sentido a la propia vida. Su obra filosófica y literaria exploró la condición humana en situaciones concretas.` , concep:`Sartre sostiene que "la existencia precede a la esencia": el ser humano no tiene una naturaleza dada, sino que se constituye por sus acciones; la libertad implica responsabilidad y la posibilidad de autenticidad.`}
+    ];
+
+    // Insertar tarjetas
+    const carousel = document.getElementById('carousel');
+    data.forEach(d=>{
+      const card = document.createElement('article'); card.className='card';
+      const colorVar = eraColor[d.era] || '--muted';
+      const eraDot = `<span class='era' style='background:var(${colorVar});color:#fff'>${d.era}</span>`;
+      card.innerHTML = `<div class='name'>${d.nombre} ${eraDot}</div>
+        <div class='meta'>${formatYear(d.nacimiento)} — ${formatYear(d.muerte)}</div>
+        <div class='content'>
+          <div class='section'><b>Aportaciones principales</b><div style='margin-top:6px;color:#dfefff;font-size:14px'>${d.aport}</div></div>
+          <div class='section'><b>Concepción del ser humano</b><div style='margin-top:6px;color:#dfefff;font-size:14px'>${d.concep}</div></div>
+        </div>`;
+      carousel.appendChild(card);
+    });
+
+    function formatYear(y){ return y<0? Math.abs(y)+" a.C.": y; }
+    function scrollCarousel(dir){ const cardWidth = document.querySelector('.card').offsetWidth + 20; document.getElementById('carousel').scrollBy({left:dir*cardWidth,behavior:'smooth'}); }
+
+    function downloadHTML(){ const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'}); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'carrusel_filosofos_30.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); }
+
+    // Scroll inicial al inicio
+    setTimeout(()=> document.getElementById('carousel').scrollLeft = 0, 200);
+  </script>
+
+
+</body></html>
